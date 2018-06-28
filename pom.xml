@@ -5,7 +5,7 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>training-app</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>training-app</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -23,6 +23,7 @@
   </dependencies>
 <build>
 <plugins>
+
 <plugin>
 <!-- Build an executable JAR -->
 <groupId>org.apache.maven.plugins</groupId>
@@ -38,6 +39,16 @@
 </archive>
 </configuration>
 </plugin>
+
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-scm-plugin</artifactId>
+<version>1.10.0</version>
+<configuration>
+<goals>install</goals>
+</configuration>
+</plugin>
+
 <plugin>
 <groupId>org.apache.maven.plugins</groupId>
 <artifactId>maven-dependency-plugin</artifactId>
@@ -58,4 +69,11 @@ ${project.build.directory}/lib
 </plugin>
 </plugins>
 </build>
+<scm>
+<connection>scm:git:https://github.com/Quenquent/training-app.git</connection>
+<developerConnection>scm:git:https://github.com/Quenquent/training-app.git</developerConnection>
+<url>https://github.com/Quenquent/training-app</url>
+<tag>master</tag>
+</scm>
+
 </project>
