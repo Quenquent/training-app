@@ -42,4 +42,8 @@ node {
    stage('Publish Artefact') {
        bat (/"${mvnHome}\bin\mvn" -DdeployOnly deploy -s "C:\Integ_Continue\apache-maven-3.5.3\conf\settings.xml"/)
    }
+   
+   stage('SonarQube analysis') {
+      bat (/"${mvnHome}\bin\mvn" -B sonar:sonar/)
+   }
 }
